@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #1e1e2f;
+            color: #ffffff;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: #00aaff;
+        }
+        .result-box {
+            background-color: #2c2c3a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #1e1e2f;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Results for <span class="text-success">{{ domain }}</span></h1>
+
+        <div class="result-box">
+            <h2>WHOIS Data</h2>
+            <pre>{{ whois_data | tojson(indent=2) }}</pre>
+        </div>
+
+        <div class="result-box">
+            <h2>DNS Data</h2>
+            <pre>{{ dns_data | tojson(indent=2) }}</pre>
+        </div>
+
+        <div class="result-box">
+            <h2>Reverse IP Data</h2>
+            <pre>{{ reverse_ip_data | tojson(indent=2) }}</pre>
+        </div>
+
+        <a href="/" class="btn btn-primary mt-4">Analyze Another Domain</a>
+    </div>
+</body>
+</html>
